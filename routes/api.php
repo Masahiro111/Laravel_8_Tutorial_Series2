@@ -30,7 +30,7 @@ Route::get('/products/{id?}', function ($id = null) {
     return 'Product id is ' . $id;
 })->where('id', '[0-9]+');
 
-Route::get('/middelware-id-test/{id?}', function ($id = null) {
+Route::get('/middleware-id-test/{id?}', function ($id = null) {
     return 'Product id is ' . $id;
 });
 
