@@ -9,32 +9,39 @@ class ClientController extends Controller
 {
     public function getAllPost()
     {
-        $response = Http::get('');
+        $response = Http::get('https://jsonplaceholder.typicode.com/posts');
         return $response->json();
     }
 
     public function getPostById($id)
     {
-        $post = Http::get('');
+        $post = Http::get('https://jsonplaceholder.typicode.com/posts/' . $id);
         return $post->json();
     }
 
     public function addPost()
     {
-        $post = Http::post('');
+        $post = Http::post('https://jsonplaceholder.typicode.com/posts', [
+            'userId' => 1,
+            'title' => 'New Post Title',
+            'body' => 'New Post Description'
+        ]);
         return  $post->json();
     }
 
     public function updatePost()
     {
-        $response = Http::put('');
+        $response = Http::put('https://jsonplaceholder.typicode.com/posts/1', [
+            'title' => 'updated Title',
+            'body' => 'Updated Description'
+        ]);
 
         return $response->json();
     }
 
-    public function deletePost()
+    public function deletePost($id)
     {
-        $response = Http::delete('');
+        $response = Http::delete('https://jsonplaceholder.typicode.com/posts' . $id);
         return $response->json();
     }
 }

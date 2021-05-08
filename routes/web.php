@@ -41,6 +41,6 @@ Route::get('/posts/{id}', [ClientController::class, 'getPostById'])
 
 Route::get('/add-post', [ClientController::class, 'addPost'])->name('posts.addpost');
 
-Route::get('/update-post', [ClientController::class, 'update-post'])->name('posts.update');
+Route::get('/update-post', [ClientController::class, 'updatePost'])->name('posts.update');
 
 Route::get('/delete-post/{id}', [ClientController::class, 'deletePost'])->name('post.delete');
