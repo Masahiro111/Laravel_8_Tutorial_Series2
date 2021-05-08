@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
@@ -31,3 +32,15 @@ Route::get('/home/{name?}', [HomeController::class, 'index'])
 
 Route::get('/user', [UserController::class, 'index'])
     ->name('user.index');
+
+Route::get('/posts', [ClientController::class, 'getAllPost'])
+    ->name('posts.getallpost');
+
+Route::get('/posts/{id}', [ClientController::class, 'getPostById'])
+    ->name('posts.getpostbyid');
+
+Route::get('/add-post', [ClientController::class, 'addPost'])->name('posts.addpost');
+
+Route::get('/update-post', [ClientController::class, 'update-post'])->name('posts.update');
+
+Route::get('/delete-post/{id}', [ClientController::class, 'deletePost'])->name('post.delete');
