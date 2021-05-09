@@ -26,8 +26,14 @@
                 <span id="reauth-email" class="reauth-email"></span>
                 <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address"
                     required autofocus>
+                @error('email')
+                <span class="text-danger">{{ $message }}</span>
+                @enderror
                 <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password"
                     required>
+                @error('password')
+                <span class="text-danger">{{ $message }}</span>
+                @enderror
                 <div id="remember" class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me"> Remember me
