@@ -19,7 +19,12 @@
                             Add Post
                         </div>
                         <div class="card-body">
-                            <form action="" method="POST">
+                            @if(Session::has('post_created'))
+                            <div class="alert alert-success" role="alert">
+                                {{Session::get('post_created')}}
+                            </div>
+                            @endif
+                            <form action="{{route('post.create')}}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="title">Post Title</label>
