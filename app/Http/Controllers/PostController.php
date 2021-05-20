@@ -20,4 +20,10 @@ class PostController extends Controller
         $post->save();
         return back()->with('post_created', 'Post has been created successfuly!');
     }
+
+    public function getPost()
+    {
+        $posts = Post::orderBy('id', 'DESC')->get();
+        return view('posts', compact('posts'));
+    }
 }
