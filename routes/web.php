@@ -70,5 +70,3 @@ Route::get('/posts', [PostController::class, 'getAllPost'])->name('post.getallpo
 Route::get('/add-post', [PostController::class, 'addPost'])->name('post.add');
 
 Route::post('/add-post', [PostController::class, 'addPostSubmit'])->name('post.addsubmit');
-
-Route::get('/posts/{id}', [PostController::class, 'getPostById'])->name('post.getpostbyid');

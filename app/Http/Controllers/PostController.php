@@ -26,6 +26,7 @@ class PostController extends Controller
         ]);
         return back()->with('post_created', 'Post has been created successfully!');
     }
+<<<<<<< HEAD
 
     public function getPostById($id)
     {
@@ -38,4 +39,6 @@ class PostController extends Controller
         DB::table('posts')->where('id', $id)->delete();
         return back()->with('post_deleted', 'Post has been deleted successfully!');
     }
+=======
+>>>>>>> parent of 01c841b... part 14 23:15
 }
