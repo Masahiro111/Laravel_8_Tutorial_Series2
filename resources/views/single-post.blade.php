@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Post</title>
+    <title>Add post</title>
 </head>
 
 <body>
@@ -18,8 +18,18 @@
                             Post Details
                         </div>
                         <div class="card-body">
-                            <h1>{{$post->title}}</h1>
-                            <p>{{$post->body}}</p>
+                            <form>
+                                @csrf
+                                <label for="title">Post Title</label>
+                                <input type="text" name="title" class="form-control" placeholder="Enter Post Title"
+                                    value="{{$post->title}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="body">Post Description</label>
+                            <textarea name="body" id="" class="form-control" cols="30"
+                                rows="8">{{$post->body}}</textarea>
+                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
