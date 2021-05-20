@@ -9,11 +9,13 @@
 </head>
 
 <body>
+    <a href="/add-post">Add Post</a>
 
     <h1>All Posts</h1>
     @foreach ($posts as $post)
     <h3>{{$post->title}}</h3>
     <p>{{$post->body}}</p>
+    <p><a href="/posts/{{po}}"></a></p>
     <hr>
     @endforeach
 
